@@ -349,8 +349,8 @@ def mock_env(monkeypatch, request):
         monkeypatch.setenv("AZURE_SEARCH_INDEX", "test-search-index")
         monkeypatch.setenv("AZURE_SEARCH_SERVICE", "test-search-service")
         monkeypatch.setenv("AZURE_SPEECH_SERVICE_ID", "test-id")
-        monkeypatch.setenv("AZURE_SPEECH_SERVICE_LOCATION", "eastus")
-        monkeypatch.setenv("AZURE_OPENAI_CHATGPT_MODEL", "gpt-4o-mini")
+        monkeypatch.setenv("AZURE_SPEECH_SERVICE_LOCATION", "eastus2")
+        monkeypatch.setenv("AZURE_OPENAI_CHATGPT_MODEL", "gpt-4.1")
         monkeypatch.setenv("ALLOWED_ORIGIN", "https://frontend.com")
         for key, value in request.param.items():
             monkeypatch.setenv(key, value)
@@ -375,7 +375,7 @@ def mock_reasoning_env(monkeypatch, request):
         monkeypatch.setenv("AZURE_SEARCH_INDEX", "test-search-index")
         monkeypatch.setenv("AZURE_SEARCH_SERVICE", "test-search-service")
         monkeypatch.setenv("AZURE_SPEECH_SERVICE_ID", "test-id")
-        monkeypatch.setenv("AZURE_SPEECH_SERVICE_LOCATION", "eastus")
+        monkeypatch.setenv("AZURE_SPEECH_SERVICE_LOCATION", "eastus2")
         monkeypatch.setenv("ALLOWED_ORIGIN", "https://frontend.com")
         monkeypatch.setenv("TEST_ENABLE_REASONING", "true")
         for key, value in request.param.items():

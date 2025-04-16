@@ -54,7 +54,7 @@ def run_server(port: int):
             "AZURE_SEARCH_INDEX": "test-search-index",
             "AZURE_SEARCH_SERVICE": "test-search-service",
             "AZURE_SPEECH_SERVICE_ID": "test-id",
-            "AZURE_SPEECH_SERVICE_LOCATION": "eastus",
+            "AZURE_SPEECH_SERVICE_LOCATION": "eastus2",
             "AZURE_OPENAI_SERVICE": "test-openai-service",
             "AZURE_OPENAI_CHATGPT_MODEL": "gpt-4.1",
         },
