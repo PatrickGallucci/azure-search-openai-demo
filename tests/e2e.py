@@ -104,19 +104,19 @@ def test_chat(sized_page: Page, live_server_url: str):
     # Check initial page state
     page.goto(live_server_url)
     expect(page).to_have_title("Azure OpenAI + AI Search")
-    expect(page.get_by_role("heading", name="Chat with your data")).to_be_visible()
+    expect(page.get_by_role("heading", name="Research Idaho Legislative Data")).to_be_visible()
     expect(page.get_by_role("button", name="Clear chat")).to_be_disabled()
-    expect(page.get_by_role("button", name="Developer settings")).to_be_enabled()
+    expect(page.get_by_role("button", name="Custom settings")).to_be_enabled()
 
     # Ask a question and wait for the message to appear
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").click()
-    page.get_by_placeholder("Type a new question (e.g. does my plan cover annual eye exams?)").fill(
-        "Whats the dental plan?"
+    page.get_by_placeholder("Type a new query (e.g. Input Bill Number: HB0065)").click()
+    page.get_by_placeholder("Type a new query (e.g. Input Bill Number: HB0065)").fill(
+        "Whats was the vote on this Bill?"
     )
     page.get_by_role("button", name="Submit question").click()
 
-    expect(page.get_by_text("Whats the dental plan?")).to_be_visible()
-    expect(page.get_by_text("The capital of France is Paris.")).to_be_visible()
+    expect(page.get_by_text("Input Bill Number: HB0065")).to_be_visible()
+    expect(page.get_by_text("Input Bill Number: HB0035")).to_be_visible()
     expect(page.get_by_role("button", name="Clear chat")).to_be_enabled()
 
     # Show the citation document
